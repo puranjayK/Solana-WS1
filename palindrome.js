@@ -1,17 +1,28 @@
-const readline = require("readline");
+// const readline = require("readline");
 
-let rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout,
-});
-function isPalindrome(s) {
-  const len = s.length;
-  for (var i = 0; i < len / 2; i++) {
-    if (s[i] != s[len - 1 - i]) return false;
-    return true;
+// let rl = readline.createInterface({
+//   input: process.stdin,
+//   output: process.stdout,
+// });
+// function isPalindrome(s) {
+//   const len = s.length;
+//   for (var i = 0; i < len / 2; i++) {
+//     if (s[i] != s[len - 1 - i]) return false;
+//     return true;
+//   }
+// }
+// rl.question("Enter string ", (s) => {
+//   console.log(isPalindrome(s));
+//   rl.close();
+// });
+
+const str = process.argv[2];
+
+const revStr = str.split('').reverse().join('');
+
+if (revStr == str) {
+  console.log(str + " is a palindrome");
   }
+else {
+  console.log(str + " is not a palindrome");
 }
-rl.question("Enter string ", (s) => {
-  console.log(isPalindrome(s));
-  rl.close();
-});
